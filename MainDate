@@ -1,0 +1,17 @@
+package es.unileon.prg;
+
+public class MainDate {
+
+	public static void main(String[] args) {
+		Date today, tomorrow;
+		today=new Date(4, 4, 2016);
+		tomorrow=new Date(5, 4, 2016);
+		System.out.println("¿Es el mismo dia? "+tomorrow.IsSameDay(today));
+		System.out.println("¿Es el mismo mes? "+tomorrow.IsSameMonth(today));
+		System.out.println("¿Es el mismo año? "+tomorrow.IsSameYear(today));
+		System.out.println("¿Es la misma fecha? "+tomorrow.IsSame(today));
+		System.out.println("La fecha pertenece al mes "+today.getMonthName());
+
+	}
+
+}
