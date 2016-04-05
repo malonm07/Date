@@ -1,0 +1,86 @@
+package es.unileon.prg;
+
+public class Date {
+int day;
+int month;
+int year;
+public Date(int day, int month, int year){
+	this.day=day;
+	this.month=month;
+	this.year=year;
+}
+
+public boolean IsSameYear(Date otraFecha){
+	if(this.year==otraFecha.getYear()){
+		return true;
+	}else{
+		return false;
+	}
+	}
+
+public boolean IsSameMonth(Date otraFecha){
+	if(this.month==otraFecha.getMonth()){
+		return true;
+	}else{
+		return false;
+	}
+	}
+public boolean IsSameDay(Date otraFecha){
+	if(this.day==otraFecha.getDay()){
+		return true;
+	}else{
+		return false;
+	}
+	}
+
+public boolean IsSame(Date otraFecha){
+	if(this.day==otraFecha.getDay()&&this.month==otraFecha.getMonth()&&this.year==otraFecha.getYear()){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+public String getMonthName(){
+	String month="";
+	switch(this.month){
+	case 1: month="Enero";break;
+	case 2: month= "Febrero";break;
+	case 3: month="Marzo";break;
+	case 4: month="Abril";break;
+	case 5: month="Mayo";break;
+	case 6: month="Junio";break;
+	case 7: month= "Julio";break;
+	case 8: month="Agosto";break;
+	case 9: month="Septiembre";break;
+	case 10: month="Octubre";break;
+	case 11: month="Noviembre";break;
+	case 12: month="Diciembre";break;
+	default: month="Error";break;
+	}
+	return month;
+}
+
+
+
+
+public void setYear(int year){
+	this.year=year;
+}
+public int getYear(){
+	return this.year;
+}
+public void setMonth(int month){
+	this.month=month;
+}
+public int getMonth(){
+	return this.month;
+}
+public void setDay(int day){
+	this.day=day;
+}
+public int getDay(){
+	return this.day;
+}
+
+}
