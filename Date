@@ -60,6 +60,404 @@ public String getMonthName(){
 	}
 	return month;
 }
+public String FechaCorrecta(){
+	int CorrectDay=0;
+	int CorrectMonth=0;
+	String Correction="";
+	switch(this.month){
+	case 1: 
+	case 2: 
+	case 3: 
+	case 4: 
+	case 5: 
+	case 6: 
+	case 7: 
+	case 8: 
+	case 9: 
+	case 10: 
+	case 11:
+	case 12: CorrectMonth=1;break;
+	default: CorrectMonth=0;break;
+	}
+	switch(this.day){
+	case 1: 
+	case 2: 
+	case 3:
+	case 4: 
+	case 5: 
+	case 6: 
+	case 7: 
+	case 8: 
+	case 9: 
+	case 10:
+	case 11:
+	case 12:
+	case 13:
+	case 14:
+	case 15:
+	case 16:
+	case 17:
+	case 18:
+	case 19:
+	case 20:
+	case 21:
+	case 22:
+	case 23:
+	case 24:
+	case 25: 
+	case 26: 
+	case 27: 
+	case 28: 
+	case 29: 
+	case 30: CorrectMonth=1;break;
+	default: CorrectMonth=0;break;
+	}
+	if((month==1&&day==31)||(month==3&&day==31)||(month==5&&day==31)||(month==7&&day==31)||(month==8&&day==31)||(month==10&&day==31)|| (month==12&&day==31)){
+		CorrectMonth=1;
+	}
+	if(month==2&&day>28){
+		CorrectMonth=0;
+	}
+	if(CorrectMonth==1&&CorrectDay==1){
+		Correction="La fecha introducida es correcta.";
+	}else{
+		Correction="La fecha introducida es incorrecta.";
+	}
+	return Correction;
+	
+}
+
+public String Estacion(){
+	String estacion="";
+	switch(this.month){
+	case 1:
+	case 2: estacion="Invierno"; break;
+	case 4:
+	case 5: estacion="Primavera";break;
+	case 7:
+	case 8: estacion="Verano";break;
+	case 10:
+	case 11: estacion="Otoño";break;
+	}
+	if(month==12&& day>=21){
+		estacion="Invierno";
+	}else if(month==12&&day<21){
+		estacion="Otoño";
+	}else if(month==3&&day>=21){
+		estacion="Primavera";
+	}else if(month==3&&day<21){
+		estacion="Invierno";
+	}else if(month==6&&day>=21){
+		estacion="Verano";
+	}else if(month==6&&day<21){
+		estacion="Primavera";
+	}else if(month==9&&day>=23){
+		estacion="Otoño";
+	}else if(month==9&&day<23){
+		estacion="Verano";
+	}else{}
+	return estacion;
+
+}
+
+public String RestOfMonths(){
+	String cadena="";
+	for (int i = this.month; i <= 12; i++) {
+		String month="";
+		switch(i){
+		case 1: month="Enero";break;
+		case 2: month= "Febrero";break;
+		case 3: month="Marzo";break;
+		case 4: month="Abril";break;
+		case 5: month="Mayo";break;
+		case 6: month="Junio";break;
+		case 7: month= "Julio";break;
+		case 8: month="Agosto";break;
+		case 9: month="Septiembre";break;
+		case 10: month="Octubre";break;
+		case 11: month="Noviembre";break;
+		case 12: month="Diciembre";break;
+		default: month="Error";break;
+		}
+		cadena=cadena+" "+month;
+	}
+	return cadena;
+}
+
+public String PrintDate(){
+	
+	 String printdate=this.day+" - "+this.month+" - "+this.year;
+	 return printdate;
+}
+
+public String RestOfDias(){
+	String nombreDia="";
+	String cadena="";
+	if(this.month==1|| this.month==3||this.month==5||this.month==7||this.month==8||this.month==10||this.month==12){
+		for (int i = this.day; i <= 31 ; i++) {
+			
+			switch(i){
+			case 1: nombreDia="Uno";break;
+			case 2: nombreDia="Dos";break;
+			case 3:nombreDia="Tres";break;
+			case 4: nombreDia="Cuatro";break;
+			case 5: nombreDia="Cinco";break;
+			case 6: nombreDia="Seis";break;
+			case 7: nombreDia="Siete";break;
+			case 8: nombreDia="Ocho";break;
+			case 9: nombreDia="Nueve";break;
+			case 10:nombreDia="Diez";break;
+			case 11:nombreDia="Once";break;
+			case 12:nombreDia="Doce";break;
+			case 13:nombreDia="Trece";break;
+			case 14:nombreDia="Catorce";break;
+			case 15:nombreDia="Quince";break;
+			case 16:nombreDia="Dieciseis";break;
+			case 17:nombreDia="Diecisiete";break;
+			case 18:nombreDia="Dieciocho";break;
+			case 19:nombreDia="Diecinueve";break;
+			case 20:nombreDia="Veinte";break;
+			case 21:nombreDia="Veintiuno";break;
+			case 22:nombreDia="Veintidos";break;
+			case 23:nombreDia="Veintitres";break;
+			case 24:nombreDia="Veinticuatro";break;
+			case 25: nombreDia="Veinticinco";break;
+			case 26: nombreDia="Veintiseis";break;
+			case 27: nombreDia="Veintisiete";break;
+			case 28: nombreDia="Veintiocho";break;	
+			case 29: nombreDia="Veintinueve";break;
+			case 30:nombreDia="Treinta";break;
+			case 31: nombreDia="Treinta y uno";break;
+			}
+			cadena=cadena+" "+ nombreDia+"-"+this.month+"-"+this.year;
+		}
+	}
+	if(this.month==4|| this.month==6||this.month==9||this.month==11){
+		for (int i = this.day; i <= 30 ; i++) {
+			switch(i){
+			case 1: nombreDia="Uno";break;
+			case 2: nombreDia="Dos";break;
+			case 3:nombreDia="Tres";break;
+			case 4: nombreDia="Cuatro";break;
+			case 5: nombreDia="Cinco";break;
+			case 6: nombreDia="Seis";break;
+			case 7: nombreDia="Siete";break;
+			case 8: nombreDia="Ocho";break;
+			case 9: nombreDia="Nueve";break;
+			case 10:nombreDia="Diez";break;
+			case 11:nombreDia="Once";break;
+			case 12:nombreDia="Doce";break;
+			case 13:nombreDia="Trece";break;
+			case 14:nombreDia="Catorce";break;
+			case 15:nombreDia="Quince";break;
+			case 16:nombreDia="Dieciseis";break;
+			case 17:nombreDia="Diecisiete";break;
+			case 18:nombreDia="Dieciocho";break;
+			case 19:nombreDia="Diecinueve";break;
+			case 20:nombreDia="Veinte";break;
+			case 21:nombreDia="Veintiuno";break;
+			case 22:nombreDia="Veintidos";break;
+			case 23:nombreDia="Veintitres";break;
+			case 24:nombreDia="Veinticuatro";break;
+			case 25: nombreDia="Veinticinco";break;
+			case 26: nombreDia="Veintiseis";break;
+			case 27: nombreDia="Veintisiete";break;
+			case 28: nombreDia="Veintiocho";break;	
+			case 29: nombreDia="Veintinueve";break;
+			case 30:nombreDia="Treinta";break;
+			}
+			cadena=cadena+" "+ nombreDia+"-"+this.month+"-"+this.year;
+		}
+	}
+	if(this.month==2){
+		for (int i = this.day; i <= 28 ; i++) {
+			switch(i){
+			case 1: nombreDia="Uno";break;
+			case 2: nombreDia="Dos";break;
+			case 3:nombreDia="Tres";break;
+			case 4: nombreDia="Cuatro";break;
+			case 5: nombreDia="Cinco";break;
+			case 6: nombreDia="Seis";break;
+			case 7: nombreDia="Siete";break;
+			case 8: nombreDia="Ocho";break;
+			case 9: nombreDia="Nueve";break;
+			case 10:nombreDia="Diez";break;
+			case 11:nombreDia="Once";break;
+			case 12:nombreDia="Doce";break;
+			case 13:nombreDia="Trece";break;
+			case 14:nombreDia="Catorce";break;
+			case 15:nombreDia="Quince";break;
+			case 16:nombreDia="Dieciseis";break;
+			case 17:nombreDia="Diecisiete";break;
+			case 18:nombreDia="Dieciocho";break;
+			case 19:nombreDia="Diecinueve";break;
+			case 20:nombreDia="Veinte";break;
+			case 21:nombreDia="Veintiuno";break;
+			case 22:nombreDia="Veintidos";break;
+			case 23:nombreDia="Veintitres";break;
+			case 24:nombreDia="Veinticuatro";break;
+			case 25: nombreDia="Veinticinco";break;
+			case 26: nombreDia="Veintiseis";break;
+			case 27: nombreDia="Veintisiete";break;
+			case 28: nombreDia="Veintiocho";break;	
+			}
+			cadena=cadena+" "+ nombreDia+"-"+this.month+"-"+this.year;
+		}
+	}
+	return cadena;
+}
+
+public String SameDays(){
+	String cadena="";
+	switch(this.month){
+	case 1:
+		cadena= "marzo "+"mayo "+"julio "+ "agosto "+"octubre "+"diciembre ";
+		break;
+	case 3:
+		cadena="enero "+"mayo "+"julio "+ "agosto "+"octubre "+"diciembre ";
+		break;
+	case 5:
+		cadena="enero "+"marzo "+"julio "+ "agosto "+"octubre "+"diciembre ";
+		break;
+	case 7:
+		cadena="enero "+"marzo "+"mayo "+ "agosto "+"octubre "+"diciembre ";
+		break;
+	case 8:
+		cadena="enero "+"marzo "+"mayo "+ "julio "+"octubre "+"diciembre ";
+		break;
+	case 10:
+		cadena="enero "+"marzo "+"mayo "+"julio "+ "agosto "+"diciembre ";
+		break;
+	
+	case 12:
+		cadena="enero "+"marzo "+"mayo "+"julio "+ "agosto "+"octubre ";
+		break;
+	case 2:
+		cadena="No hay ningún mes que tenga el mismo numero de dias.";
+		break;
+	case 4:
+		cadena="junio "+"septiembre "+"noviembre ";
+		break;
+	case 6:
+		cadena="abril "+"septiembre "+"noviembre ";
+		break;
+	case 9:
+		cadena="abril "+"junio "+"noviembre ";
+		break;
+	case 11:
+		cadena="abril "+"junio "+"septiembre";
+		break;
+		default:
+			cadena="Error.";
+			break;
+}
+	return cadena;
+	
+}
+public int DaysCount(){
+	int contador=0;
+	if(this.month==1){
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}		
+	}
+	if(this.month==2){
+		contador=31;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==3){
+		contador=31+28;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==4){
+		contador=31+28+31;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==5){
+		contador=31+28+31+30;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==6){
+		contador=31+28+31+30+31;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==7){
+		contador=31+28+31+30+31+30;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==8){
+		contador=31+28+31+30+31+30+31;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==9){
+		contador=31+28+31+30+31+30+31+31;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==10){
+		contador=31+28+31+30+31+30+31+31+30;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==11){
+		contador=31+28+31+30+31+30+31+31+30+31;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	if(this.month==12){
+		contador=31+28+31+30+31+30+31+31+30+31+30;
+		for (int i=1; i<=this.day;i++){
+			contador++;
+		}
+	}
+	return contador;
+	
+}
+
+public int AleatoryDate(){
+	int contador=0;
+	int day = (int) (Math.random()*31+1);
+	int month = (int) (Math.random()*12+1);
+	int year = (int) (Math.random()*2020+1);
+	while(day!=this.day||month!=this.month||year!=this.year){
+		contador++;
+		day = (int) (Math.random()*31+1);
+		month = (int) (Math.random()*12+1);
+		year = (int) (Math.random()*2020+1);
+	}
+	return contador;
+}
+
+public int AleatoryDateDoWhile(){
+	int contador=0;
+	int day = (int) (Math.random()*31+1);
+	int month = (int) (Math.random()*12+1);
+	int year = (int) (Math.random()*2020+1);
+	do{
+		contador++;
+		day = (int) (Math.random()*31+1);
+		month = (int) (Math.random()*12+1);
+		year = (int) (Math.random()*2020+1);
+	}while(day!=this.day||month!=this.month||year!=this.year);
+	return contador;
+}
 
 
 
