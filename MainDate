@@ -11,6 +11,16 @@ public class MainDate {
 		System.out.println("¿Es el mismo año? "+tomorrow.IsSameYear(today));
 		System.out.println("¿Es la misma fecha? "+tomorrow.IsSame(today));
 		System.out.println("La fecha pertenece al mes "+today.getMonthName());
+		System.out.println("¿La fecha introducida es correcta? "+today.FechaCorrecta());
+		System.out.println("La fecha introducida pertenece a la estacion "+today.Estacion());
+		System.out.println("Los meses que quedan para fin de año son: "+today.RestOfMonths());
+		System.out.println("La fecha es "+today.PrintDate());
+		System.out.println("La fecha hasta fin de mes son "+today.RestOfDias());
+		System.out.println("Los meses con el mismo numero de dias son "+today.SameDays());
+		System.out.println("Los dias desde el dia 1 hasta la fecha, son "+today.DaysCount());
+		System.out.println("Los intentos hasta adivinar la fecha mediante while, son "+today.AleatoryDate());
+		System.out.println("Los intentos hasta adivinar la fecha mediante dowhile, son "+today.AleatoryDateDoWhile());
+		
 
 	}
 
